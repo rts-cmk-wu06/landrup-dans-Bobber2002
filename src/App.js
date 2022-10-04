@@ -1,6 +1,7 @@
 import Screen from "./lib/components/screen";
 import WelcomePage from "./pages/Welcome/welcome";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/Home/home";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<WelcomePage/>} />
+            <Route path="/home" element={<HomePage/>} />
           </Routes>
         </Router>
       </Screen>
