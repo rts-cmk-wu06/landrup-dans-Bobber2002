@@ -1,10 +1,10 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const WelcomePage = () => {
   return (
     <div
       id="WelcomePage"
-      className="bg-[url('../public/splash-image.jpg')] w-full h-full bg-cover bg-center"
+      className="relative bg-[url('../public/splash-image.jpg')] w-full h-full bg-cover bg-center z-10"
     >
       <div className="h-full w-full flex flex-col-reverse items-center pb-12">
         <div className="flex flex-col items-center w-full h-1/2 justify-between">
