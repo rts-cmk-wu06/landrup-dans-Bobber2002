@@ -2,6 +2,7 @@ import Screen from "./lib/components/screen";
 import WelcomePage from "./pages/Welcome/welcome";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Home/home";
+import CalenderPage from "./pages/Calender/calender";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<WelcomePage/>} />
             <Route path="/home" element={<HomePage/>} />
+            <Route path="/calender" element={<CalenderPage/>} />
           </Routes>
         </Router>
       </Screen>
