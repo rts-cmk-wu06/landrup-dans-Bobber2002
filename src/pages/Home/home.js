@@ -8,12 +8,10 @@ const HomePage = () => {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/api/v1/activities")
-      .then((response) => {
-        setActivities(response.data);
-      })
-      .then(console.log(activities));
+    axios.get("http://localhost:4000/api/v1/activities").then((response) => {
+      setActivities(response.data);
+      
+    });
   }, []);
 
   console.log(activities);
@@ -43,7 +41,10 @@ const HomePage = () => {
                   backgroundImage: `url(${activity.asset.url})`,
                 }}
               >
-                <Link to={"/class?id=" + activity.id} className="h-full w-full overflow-hidden flex flex-col-reverse">
+                <Link
+                  to={"/class?id=" + activity.id}
+                  className="h-full w-full overflow-hidden flex flex-col-reverse"
+                >
                   <div className="p-5 bg-secondary bg-opacity-80 text-lg rounded-tr-[39px]">
                     <p>{activity.name}</p>
                     <p>
