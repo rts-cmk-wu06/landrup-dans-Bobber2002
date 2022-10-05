@@ -3,6 +3,7 @@ import WelcomePage from "./pages/Welcome/welcome";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Home/home";
 import CalenderPage from "./pages/Calender/calender";
+import CalenderActivityOverview from "./pages/Calender/overview";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/" element={<WelcomePage/>} />
             <Route path="/home" element={<HomePage/>} />
             <Route path="/calender" element={<CalenderPage/>} />
+            <Route path="/calender/class" element={<CalenderActivityOverview/>} />
           </Routes>
         </Router>
       </Screen>
