@@ -11,7 +11,7 @@ const HomePage = () => {
         <p className="text-4xl pb-8 text-themewhite">Aktiviteter</p>
         <Swiper
           id="slider"
-          className="h-[40rem] overflow-y-clip"
+          className="h-[42rem] overflow-y-clip"
           direction={"vertical"}
           slidesPerView={1.5}
           freeMode={true}
