@@ -1,4 +1,3 @@
-import { FiSearch } from "react-icons/fi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper";
 
@@ -9,18 +8,7 @@ const HomePage = () => {
       className="h-full w-full flex flex-col items-center bg-primary px-6 pt-10"
     >
       <div className="w-full h-full">
-        <p className="text-4xl pb-4 text-themewhite">Søg</p>
-        <form action="" className="w-full h-[48px] mb-12">
-          <div className="w-full h-full p-3 text-center bg-[#c4c4c4] bg-opacity-30 flex justify-between">
-            <input
-              className="bg-transparent outline-none border-none text-white"
-              type="text"
-            />
-            <span className="text-md text-white">
-              <FiSearch size={24} />
-            </span>
-          </div>
-        </form>
+        <p className="text-4xl pb-8 text-themewhite">Aktiviteter</p>
         <Swiper
           id="slider"
           className="h-[40rem] overflow-y-clip"
