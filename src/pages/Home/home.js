@@ -1,7 +1,22 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 const HomePage = () => {
+  const [activities, setActivities] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/api/v1/activities")
+      .then((response) => {
+        setActivities(response.data);
+      })
+      .then(console.log(activities));
+  }, []);
+
+  console.log(activities);
+
   return (
     <div
       id="HomePage"
@@ -17,39 +32,23 @@ const HomePage = () => {
           freeMode={true}
           modules={[FreeMode]}
         >
-          <SwiperSlide
-            className="w-full !h-[344px] bg-white mb-6 bg-contain bg-center rounded-[39px] rounded-br-none overflow-hidden flex flex-col-reverse"
-            style={{
-              backgroundImage: "url(https://via.placeholder.com/500)",
-            }}
-          >
-            <div className="p-5 bg-secondary bg-opacity-80 text-lg rounded-tr-[39px]">
-              <p>Junior ting</p>
-              <p>nolge år</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide
-            className="w-full !h-[344px] bg-white mb-6 bg-contain bg-center rounded-[39px] rounded-br-none overflow-hidden flex flex-col-reverse"
-            style={{
-              backgroundImage: "url(https://via.placeholder.com/500)",
-            }}
-          >
-            <div className="p-5 bg-secondary bg-opacity-80 text-lg rounded-tr-[39px]">
-              <p>Junior ting</p>
-              <p>nolge år</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide
-            className="w-full !h-[344px] bg-white mb-6 bg-contain bg-center rounded-[39px] rounded-br-none overflow-hidden flex flex-col-reverse"
-            style={{
-              backgroundImage: "url(https://via.placeholder.com/500)",
-            }}
-          >
-            <div className="p-5 bg-secondary bg-opacity-80 text-lg rounded-tr-[39px]">
-              <p>Junior ting</p>
-              <p>nolge år</p>
-            </div>
-          </SwiperSlide>
+          {activities.map((activity) => {
+            return (
+              <SwiperSlide
+                id={'c'+activity.id}
+                key={activity.id}
+                className="w-full !h-[344px] bg-white mb-6 bg-cover bg-center rounded-[39px] rounded-br-none overflow-hidden flex flex-col-reverse"
+                style={{
+                  backgroundImage: `url(${activity.asset.url})`,
+                }}
+              >
+                <div className="p-5 bg-secondary bg-opacity-80 text-lg rounded-tr-[39px]">
+                  <p>{activity.name}</p>
+                  <p>{activity.minAge} - {activity.maxAge} år</p>
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </div>
