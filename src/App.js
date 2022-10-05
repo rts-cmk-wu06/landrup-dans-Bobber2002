@@ -5,6 +5,7 @@ import HomePage from "./pages/Home/home";
 import CalenderPage from "./pages/Calender/calender";
 import CalenderActivityOverview from "./pages/Calender/overview";
 import Navigation from "./lib/components/navbar";
+import SearchPage from "./pages/Search/search";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<WelcomePage />} />
             <Route path="/home" element={<HomePage />} />
+            <Route path="/search" element={<SearchPage />} />
             <Route path="/calender" element={<CalenderPage />} />
             <Route
               path="/calender/class"
