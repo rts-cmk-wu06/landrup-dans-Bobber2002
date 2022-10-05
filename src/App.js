@@ -6,6 +6,7 @@ import CalenderPage from "./pages/Calender/calender";
 import CalenderActivityOverview from "./pages/Calender/overview";
 import Navigation from "./lib/components/navbar";
 import SearchPage from "./pages/Search/search";
+import ClassOverview from "./pages/Overview/overview";
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
             <Route
               path="/calender/class"
               element={<CalenderActivityOverview />}
+            />
+            <Route
+              path="/class"
+              element={<ClassOverview />}
             />
           </Routes>
         <Navigation/>
