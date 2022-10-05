@@ -6,13 +6,13 @@ const ClassOverview = () => {
   let activityId = window.location.search.replace("?id=", "");
 
   useEffect(() => {
-    console.log(activityId);
+    // console.log(activityId);
     axios
       .get("http://localhost:4000/api/v1/activities/" + activityId)
       .then((response) => setActivity(response.data));
   }, []);
 
-  console.log(activity);
+  // console.log(activity);
 
   return (
     <div

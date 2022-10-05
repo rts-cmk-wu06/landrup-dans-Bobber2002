@@ -25,15 +25,15 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<WelcomePage />} />
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/calender" element={<CalenderPage />} />
+            <Route path="/user/home" element={<HomePage />} />
+            <Route path="/user/search" element={<SearchPage />} />
+            <Route path="/user/calender" element={<CalenderPage />} />
             <Route
-              path="/calender/class"
+              path="/user/calender/class"
               element={<CalenderActivityOverview />}
             />
             <Route
-              path="/class"
+              path="/user/class"
               element={<ClassOverview />}
             />
           </Routes>
