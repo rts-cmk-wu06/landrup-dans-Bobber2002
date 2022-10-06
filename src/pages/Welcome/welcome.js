@@ -4,7 +4,7 @@ const WelcomePage = () => {
   return (
     <div
       id="WelcomePage"
-      className="bg-[url('../public/splash-image.jpg')] w-full h-full bg-cover bg-center"
+      className="relative bg-[url('../public/splash-image.jpg')] w-full h-full bg-cover bg-center z-10"
     >
       <div className="h-full w-full flex flex-col-reverse items-center pb-12">
         <div className="flex flex-col items-center w-full h-1/2 justify-between">
@@ -30,7 +30,7 @@ const WelcomePage = () => {
               DANS
             </p>
           </div>
-          <Link to="/home">
+          <Link to="/login">
             <button className="text-center text-white w-[249px] h-[54px] rounded-md bg-primary">
               Kom i gang
             </button>
