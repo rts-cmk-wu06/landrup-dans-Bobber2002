@@ -8,10 +8,18 @@ import Navigation from "./lib/components/navbar";
 import SearchPage from "./pages/Search/search";
 import ClassOverview from "./pages/Overview/overview";
 import LoginPage from "./pages/Login/login";
-
+import { useState, useEffect } from "react";
 function App() {
+  const [token, setToken] = useState("");
+  const [loggedin, setLoggedin] = useState();
+
+  // useEffect(() => {
+  //   console.log(loggedin);
+  // }, [loggedin, setLoggedin]);
+
   return (
     <div className="bg-slate-800 h-screen w-screen z-0">
+      {/* {console.log(loggedin, token)} */}
       <link
         href="http://fonts.googleapis.com/css?family=Roboto"
         rel="stylesheet"
@@ -26,20 +34,26 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<WelcomePage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/user/home" element={<HomePage />} />
-            <Route path="/user/search" element={<SearchPage />} />
-            <Route path="/user/calender" element={<CalenderPage />} />
             <Route
-              path="/user/calender/class"
+              path="/login"
+              element={
+                <LoginPage
+                  setToken={setToken}
+                  loggedin={loggedin}
+                  setLoggedin={setLoggedin}
+                />
+              }
+            />
+            <Route path="/5/home" element={<HomePage />} />
+            <Route path="/5/search" element={<SearchPage />} />
+            <Route path="/5/calender" element={<CalenderPage />} />
+            <Route
+              path="/5/calender/class"
               element={<CalenderActivityOverview />}
             />
-            <Route
-              path="/user/class"
-              element={<ClassOverview />}
-            />
+            <Route path="/5/class" element={<ClassOverview />} />
           </Routes>
-        <Navigation/>
+          <Navigation />
         </Router>
       </Screen>
     </div>
