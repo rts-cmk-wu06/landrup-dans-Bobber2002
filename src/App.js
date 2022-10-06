@@ -46,7 +46,7 @@ function App() {
             />
             <Route path="/5/home" element={<HomePage />} />
             <Route path="/5/search" element={<SearchPage />} />
-            <Route path="/5/calender" element={<CalenderPage />} />
+            <Route path="/5/calender" element={<CalenderPage token={token}/>} />
             <Route
               path="/5/calender/class"
               element={<CalenderActivityOverview />}
