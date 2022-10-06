@@ -25,7 +25,7 @@ const LoginPage = ({setToken, loggedin, setLoggedin}) => {
       })
       .then((response) => {
         if (response.status === 200) {
-          console.log(response.data.token);
+          // console.log(response.data.token);
           setToken(response.data.token);
           axios
           .get("http://localhost:4000/api/v1/users/5", {

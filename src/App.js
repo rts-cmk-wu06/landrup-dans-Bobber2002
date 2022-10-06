@@ -13,6 +13,8 @@ function App() {
   const [token, setToken] = useState("");
   const [loggedin, setLoggedin] = useState();
 
+  console.log("token: "+token);
+
   // useEffect(() => {
   //   console.log(loggedin);
   // }, [loggedin, setLoggedin]);
@@ -49,9 +51,9 @@ function App() {
             <Route path="/5/calender" element={<CalenderPage token={token}/>} />
             <Route
               path="/5/calender/class"
-              element={<CalenderActivityOverview />}
+              element={<CalenderActivityOverview token={token}/>}
             />
-            <Route path="/5/class" element={<ClassOverview />} />
+            <Route path="/5/class" element={<ClassOverview token={token}/>} />
           </Routes>
           <Navigation />
         </Router>
