@@ -30,7 +30,7 @@ const WelcomePage = () => {
               DANS
             </p>
           </div>
-          <Link to="/user/home">
+          <Link to="/login">
             <button className="text-center text-white w-[249px] h-[54px] rounded-md bg-primary">
               Kom i gang
             </button>

@@ -3,7 +3,7 @@
 const Activity = ({ activity }) => {
   return (
     <Link
-      to={'/user/class?id='+activity.id}
+      to={'/5/class?id='+activity.id}
       className="w-full !h-[344px] bg-white bg-cover bg-center rounded-[39px] rounded-br-none overflow-hidden flex flex-col-reverse"
       style={{
         backgroundImage: `url(${activity.asset.url})`,
