@@ -50,11 +50,11 @@ const CalenderPage = ({ token }) => {
           modules={[FreeMode]}
         >
           {userActivities.map((activity) => {
-            console.log(activity);
+            // console.log(activity);
             return (
               <SwiperSlide className="">
                 <Link
-                  to={`${path.pathname}/class?${activity.id}`}
+                  to={`${path.pathname}/class?id=${activity.id}`}
                   className="w-full !h-[107px] px-8 py-6 text-ellipsis whitespace-nowrap bg-themewhite mb-8 bg-contain bg-center rounded-[11px] overflow-hidden flex flex-col-reverse justify-center"
                 >
                   <h3 className="text-lg h-5 capitalize">{activity.weekday} {activity.time}</h3>
