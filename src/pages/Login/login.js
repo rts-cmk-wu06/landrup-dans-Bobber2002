@@ -2,16 +2,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const LoginPage = ({setToken, loggedin, setLoggedin}) => {
+const LoginPage = ({ setToken, loggedin, setLoggedin }) => {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
-
+  const [badLogin, setBadLogin] = useState(false);
 
   let navigate = useNavigate();
 
-
   function handleLogin(e) {
     e.preventDefault();
-    setIsLoggingIn(true)
+    setIsLoggingIn(true);
+    setBadLogin(false);
     const form = e.target;
     const username = form[0].value;
     const password = form[1].value;
@@ -28,29 +28,26 @@ const LoginPage = ({setToken, loggedin, setLoggedin}) => {
           // console.log(response.data.token);
           setToken(response.data.token);
           axios
-          .get("http://localhost:4000/api/v1/users/5", {
-            headers: {
-              Authorization: `Bearer ${response.data.token}`,
-            },
-          })
-          .then((response) => {
-            if (response.status === 200) {
-                setIsLoggingIn(false)
-                setLoggedin(true)
-                navigate('/5/home')
-              }else{
-                console.log('no');
+            .get("http://localhost:4000/api/v1/users/5", {
+              headers: {
+                Authorization: `Bearer ${response.data.token}`,
+              },
+            })
+            .then((response) => {
+              if (response.status === 200) {
+                setIsLoggingIn(false);
+                setLoggedin(true);
+                navigate("/5/home");
+              } else {
+                console.log("no");
               }
             });
         }
       })
       .catch((error) => {
-        setIsLoggingIn(false)
-        document.getElementById('brugernavnInput').value = '';
-        document.getElementById('adgangskodeInput').value = '';
-        document.getElementById('brugernavnInput').placeholder = 'Brugernavn eller adgangskode er forkert';
-      })
-      ;
+        setIsLoggingIn(false);
+        setBadLogin(true);
+      });
   }
 
   return (
@@ -62,12 +59,15 @@ const LoginPage = ({setToken, loggedin, setLoggedin}) => {
       <div className="flex flex-col justify-between z-20">
         <h1 className="text-themewhite text-5xl pb-6">Log ind</h1>
         <form className="" action="" onSubmit={handleLogin}>
+          {badLogin && <p className="bg-primary text-themewhite p-2">Brugernavn eller adgangskode er forkert!</p>}
           <input
             id="brugernavnInput"
             className="w-full h-12 bg-themewhite outline-none border-none decoration-0 p-4 mb-4"
             type="text"
             placeholder="brugernavn"
-            onSelect={(e)=>{e.currentTarget.placeholder = "brugernavn"}}
+            onSelect={(e) => {
+              e.currentTarget.placeholder = "brugernavn";
+            }}
           />
           <input
             id="adgangskodeInput"
@@ -76,7 +76,7 @@ const LoginPage = ({setToken, loggedin, setLoggedin}) => {
             placeholder="adgangskode"
           />
           <button className="mt-8 ml-8 text-center text-white w-[249px] h-[54px] rounded-lg bg-primary self-center mx-auto">
-            {!isLoggingIn ? 'Log in' : '...'}
+            {!isLoggingIn ? "Log in" : "..."}
           </button>
         </form>
       </div>
