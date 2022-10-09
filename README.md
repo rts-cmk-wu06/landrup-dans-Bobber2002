@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+# Svendeprøve dokumentation Christoffer Langkilde - WU06 - okt 2022
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Tech-Stack
 
-In the project directory, you can run:
+### React:
 
-### `npm start`
+Jeg har valgt at bruge React i mit projekt, fordi det er det framework/library jeg selv kender bedst. React er også meget fleksibelt, og tillader en som udvikler at spare en masse tid, og kost af udvikling pga. Reacts modulare struktur. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Det er også nemt at opretholde Reacts kode da det ikke går i stykker selvom der er ændringer. React er også designet til at være et hurtigt framework, så man kan køre komplekse sites ekstremt hurtigt. Det er gjort ved at lave en virtuel DOM der kører server-sided.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+React giver også mulighed for genbrugelige komponenter. Det er et af mine egne yndlings funktioner som React tilbyder. Det gør det super nemt at lave små komponenter, som man ved skal bruges flere steder.
 
-### `npm test`
+React har også en masse packages der gør react et endnu stærkerer værktøj, som bringer mig videre til…
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Tailwind CSS:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Tailwind er det css framework jeg har valgt at tage med i mit projekt. Det er det css framework jeg selv er bedst bekendt med, og det er den måde jeg godt kan lide at arbejde med css. Man kan nemlig spare meget tid på bare at have ens css og html i samme dokument, i stedet for at skifte mellem 2 dokumenter.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Tailwind tilbyder en hurtig og ekstrem nem styling af ens site der er kendt som utility-first. Det hele bliver stylet igennem classes der bliver sat på ens elementer, og alle classes gør noget forskelligt ved ens element. Alt ens Tailwind css bliver lavet om til normal web læseligt css på millisekunder, og selve frameworket er ekstremt kompakt og fylder næsten ingenting. Med Tailwind kan man lave ens design et til et med ens mockup, og hvis Tailwind mangler noget man skal bruge, så kan man i Tailwinds config fil helt selv skabe nye klasser lige til ens behov.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Axios:
 
-### `npm run eject`
+Jeg har valgt Axios fordi jeg har arbejdet mere med det end fetch.
+Axios har også nogle funktioner som fetch ikke har der er meget nyttige at have. Axios har muligheden for at annullere HTTP requests eller sætte en timeout på dem, samt at Axios automatisk transformere JSON data, og det er kun nogle af tingene.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Versionsstyring:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Jeg har brugt github til versionsstyring. Github tillader mig at pushe mit arbejde ud på nettet, så jeg kan tilgå det lige meget hvor jeg er. Jeg har pushet hver gang jeg har færdiggjort en opgave, og sammen med det har jeg lavet nogle gode beskrivelser, samt labels der fortæller om der er bugs eller om der er nye features.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deploy process:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Min deploy process foregår gennem netlify, der automatisk opdatere/builder min netlify side, når der kommer nye changes til mit projekt. (I dette tilfælde min fork)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Tech-Stack perspektivering:
 
-### Analyzing the Bundle Size
+### React:
+React køre på en virtuel DOM og derfor har lynhurtige hastigheder. Det gør angular ikke
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Tailwind css:
 
-### Making a Progressive Web App
+Tailwind har gode predefined klasser man nemt kan bruge. Udover det kan man nemt oprette egne klasser på sekunder, der passer lige til ens behov. Det er meget svære med bootstrap.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Axios:
 
-### Advanced Configuration
+Axios har automatisk JSON konvertering, og HTTP request annullering. Det har fetch ikke.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Projekt perspektivering:
 
-### `npm run build` fails to minify
+Appen kunne helt klart få tilføjet flere funktioner. det ville være godt med “premium aktiviteter” til evt. guld medlemmer. Det ville også være godt hvis instruktører kunne annullere aktiviteter, hvis det skulle være nødvendigt. Appen kunne også blive udviklet til at virke på desktop og andre platforme.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Kode til særlig bedømmelse:
+
+### Kode fra Search.js
+
+```javascript
+  let sortedActivities = [];
+  let timeout;
+
+
+  function handleSearch(e) {
+    e.preventDefault();
+
+    clearTimeout(timeout);
+
+    timeout = setTimeout(() => {
+      sortedActivities = [];
+      activities.map((activity) => {
+        if (
+          activity.name.toLowerCase().includes(e.target.value.toLowerCase()) &&
+          !sortedActivities.includes(activity) &&
+          e.target.value.length !== 0
+        ) {
+          sortedActivities.push(activity);
+        }
+        // console.dir(sortedActivities);
+      });
+      setSortedActivitiesState(sortedActivities);
+    }, 200);
+  }
+  
+  
+  const [activities, setActivities] = useState([]);
+  const [sortedActivitiesState, setSortedActivitiesState] = useState([]);
+
+
+  useEffect(() => {
+    axios.get("http://localhost:4000/api/v1/activities").then((response) => {
+      setActivities(response.data);
+    });
+  }, []);
+  
+  /// 
+        <input
+          onChange={(e) => {
+            handleSearch(e);
+          }}
+          className="bg-transparent outline-none border-none text-white"
+          type="text"
+        />
+          {sortedActivitiesState.length > 0 ? (
+            sortedActivitiesState.map((activity) => {
+              // console.log(sortedActivitiesState.length);
+              return (
+                <SwiperSlide key={activity.id}>
+                  <Activity activity={activity} />
+                </SwiperSlide>
+              );
+            })
+          ) : (
+            <p className="text-themewhite text-lg">
+              Det ser ud som om ingen aktiviter matcher din søgning.
+            </p>
+          )}
+```
